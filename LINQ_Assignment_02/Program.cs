@@ -1,4 +1,5 @@
-﻿using static LINQ_Assignment_02.ListGenerators;
+﻿using System.Linq;
+using static LINQ_Assignment_02.ListGenerators;
 
 namespace LINQ_Assignment_02
 {
@@ -184,8 +185,14 @@ namespace LINQ_Assignment_02
             #endregion
             #region LINQ - Quantifiers
             #region Q1
-            bool R = dictionary_english.Any(x=>x.Contains("ei"));
-            Console.WriteLine(R);
+            //bool R = dictionary_english.Any(x=>x.Contains("ei"));
+            //Console.WriteLine(R);
+            #endregion
+            #region Q2
+            var p = ProductList.GroupBy(x => x.Category);
+            foreach (var item in p)
+                if (item.Any(x => x.UnitsInStock == 0))
+                    Console.WriteLine($"{item.Key} has a product with UnitsInStock = 0");
             #endregion
             #endregion
             Console.ReadKey();
