@@ -6,6 +6,8 @@ namespace LINQ_Assignment_02
     {
         static void Main(string[] args)
         {
+            var dictionary_english = File.ReadAllLines("dictionary_english.txt");
+
             #region LINQ - Element Operators
             #region Q1
             //var FirstP = ProductList.First(x => x.UnitsInStock == 0);
@@ -58,8 +60,6 @@ namespace LINQ_Assignment_02
             //int sum = Arr.Sum();
             //Console.WriteLine(sum);
             #endregion
-
-            var dictionary_english = File.ReadAllLines("dictionary_english.txt");
 
             #region Q5
             //var dictionary_english = File.ReadAllLines("dictionary_english.txt");
@@ -179,7 +179,13 @@ namespace LINQ_Assignment_02
             //numbers.SkipWhile(x => x%3 != 0).print();
             #endregion
             #region Q5
-            numbers.SkipWhile((x,i) => x >= i).print();
+            //numbers.SkipWhile((x,i) => x >= i).print();
+            #endregion
+            #endregion
+            #region LINQ - Quantifiers
+            #region Q1
+            bool R = dictionary_english.Any(x=>x.Contains("ei"));
+            Console.WriteLine(R);
             #endregion
             #endregion
             Console.ReadKey();
