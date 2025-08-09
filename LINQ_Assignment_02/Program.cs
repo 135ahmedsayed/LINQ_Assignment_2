@@ -166,7 +166,10 @@ namespace LINQ_Assignment_02
             #endregion
             #region LINQ - Partitioning Operators
             #region Q1
-            CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(3).print(); // not Found any customer from Washington with orders.
+            //CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(3).print(); // not Found any customer from Washington with orders.
+            #endregion
+            #region Q2
+            CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(2).print(); // not Found any customer from Washington with orders.
             #endregion
             #endregion
             Console.ReadKey();
