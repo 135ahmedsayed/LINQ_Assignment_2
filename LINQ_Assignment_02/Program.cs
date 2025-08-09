@@ -84,10 +84,19 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q9
-            var TotalUnitsInStock = ProductList.Where(x=>x.UnitsInStock!=0).GroupBy(x => x.Category);
-            foreach (var item in TotalUnitsInStock)
+            //var TotalUnitsInStock = ProductList.Where(x=>x.UnitsInStock!=0).GroupBy(x => x.Category);
+            //foreach (var item in TotalUnitsInStock)
+            //{
+            //    Console.WriteLine($"{item.Key} : UnitsInStocks = {item.Sum(x=>x.UnitsInStock)}");
+            //    Console.WriteLine("____________________");
+            //}
+            #endregion
+
+            #region Q10
+            var CheapestUnitsInStock = ProductList.GroupBy(x => x.Category);
+            foreach (var item in CheapestUnitsInStock)
             {
-                Console.WriteLine($"{item.Key} : UnitsInStocks = {item.Sum(x=>x.UnitsInStock)}");
+                Console.WriteLine($"{item.Key} : UnitsInStocks = {item.OrderBy(x=>x.UnitPrice).First()}");
                 Console.WriteLine("____________________");
             }
             #endregion
