@@ -59,6 +59,8 @@ namespace LINQ_Assignment_02
             //Console.WriteLine(sum);
             #endregion
 
+            var dictionary_english = File.ReadAllLines("dictionary_english.txt");
+
             #region Q5
             //var dictionary_english = File.ReadAllLines("dictionary_english.txt");
             //var total_Char = dictionary_english.Sum(x => x.Length);
@@ -72,9 +74,13 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q7
-            var dictionary_english = File.ReadAllLines("dictionary_english.txt");
-            var Lenth_Longest = dictionary_english.OrderBy(x => x.Length).Last();
-            Console.WriteLine(Lenth_Longest); // returns dichlorodiphenyltrichloroethane
+            //var Lenth_Longest = dictionary_english.OrderBy(x => x.Length).Last();
+            //Console.WriteLine(Lenth_Longest); // returns dichlorodiphenyltrichloroethane
+            #endregion
+
+            #region Q8
+            double Average = dictionary_english.Average(x => x.Length);
+            Console.WriteLine(Average); // returns 9.442576175563836
             #endregion
             #endregion
             Console.ReadKey();
