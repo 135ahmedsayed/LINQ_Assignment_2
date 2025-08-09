@@ -149,9 +149,7 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q2
-            ProductList.DistinctBy(x => x.ProductName[0]).print();
-            Console.WriteLine("______________________");
-            CustomerList.DistinctBy(x => x.CustomerName[0]).print();
+            ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(x => x.CustomerName[0])).print();
             #endregion
             #endregion
             Console.ReadKey();
