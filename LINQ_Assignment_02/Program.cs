@@ -24,9 +24,18 @@ namespace LINQ_Assignment_02
             #endregion
             #region LINQ - Aggregate Operators
             #region Q1
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var odd = Arr.Count(x => x % 2 != 0);
-            Console.WriteLine(odd); // returns 5
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var odd = Arr.Count(x => x % 2 != 0);
+            //Console.WriteLine(odd); // returns 5
+            #endregion
+
+            #region Q2
+            CustomerList.Select(x => new 
+            {
+                CustomerID = x.CustomerID,
+                CustomerName = x.CustomerName,
+                OrderCount = x.Orders.Count(),
+            }).print();
             #endregion
             #endregion
             Console.ReadKey();
