@@ -247,11 +247,20 @@ namespace LINQ_Assignment_02
             //}).print();
             #endregion
             #region Q3
-            ProductList.Select(x => new 
+            //ProductList.Select(x => new 
+            //{
+            //    x.ProductName,
+            //    Price = x.UnitPrice,
+            //    x.UnitsInStock,
+            //}).print();
+            #endregion
+            #region Q4
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            Arr.Select((x, i) => new
             {
-                x.ProductName,
-                Price = x.UnitPrice,
-                x.UnitsInStock,
+                Value = x,
+                Index = i,
+                condition = x == i ,
             }).print();
             #endregion
             #endregion
