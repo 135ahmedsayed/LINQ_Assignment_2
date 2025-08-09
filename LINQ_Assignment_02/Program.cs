@@ -66,9 +66,15 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q6
+            //var dictionary_english = File.ReadAllLines("dictionary_english.txt");
+            //var Lenth_Shortest = dictionary_english.OrderBy(x => x.Length).First();
+            //Console.WriteLine(Lenth_Shortest); // returns b
+            #endregion
+
+            #region Q7
             var dictionary_english = File.ReadAllLines("dictionary_english.txt");
-            var Lenth_Shortest = dictionary_english.OrderBy(x => x.Length).First();
-            Console.WriteLine(Lenth_Shortest); // returns b
+            var Lenth_Longest = dictionary_english.OrderBy(x => x.Length).Last();
+            Console.WriteLine(Lenth_Longest); // returns dichlorodiphenyltrichloroethane
             #endregion
             #endregion
             Console.ReadKey();
