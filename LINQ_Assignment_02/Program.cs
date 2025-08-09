@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using static LINQ_Assignment_02.ListGenerators;
 
 namespace LINQ_Assignment_02
@@ -172,7 +173,7 @@ namespace LINQ_Assignment_02
             #region Q2
             //CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(2).print(); // not Found any customer from Washington with orders.
             #endregion
-            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
             #region Q3
             //numbers.TakeWhile((x,i)=> x > i ).print();
             #endregion
@@ -195,10 +196,20 @@ namespace LINQ_Assignment_02
             //        Console.WriteLine($"{item.Key} has a product with UnitsInStock = 0");
             #endregion
             #region Q3
-            var p = ProductList.GroupBy(x => x.Category);
-            foreach (var item in p)
-                if (item.All(x => x.UnitsInStock != 0))
-                    Console.WriteLine($"{item.Key} has a product with UnitsInStock");
+            //var p = ProductList.GroupBy(x => x.Category);
+            //foreach (var item in p)
+            //    if (item.All(x => x.UnitsInStock != 0))
+            //        Console.WriteLine($"{item.Key} has a product with UnitsInStock");
+            #endregion
+            #endregion
+            #region LINQ – Grouping Operators
+            #region Q1
+            List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+            var groupedNumbers = numbers.GroupBy(x => x % 5);
+            foreach (var group in groupedNumbers)
+            {
+                Console.WriteLine($"Numbers with a remainder of {group.Key} when divided by 5 : \n{string.Join("\n", group)}");
+            }
             #endregion
             #endregion
             Console.ReadKey();
