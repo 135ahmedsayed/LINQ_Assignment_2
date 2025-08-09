@@ -212,14 +212,24 @@ namespace LINQ_Assignment_02
             //}
             #endregion
             #region Q2
-            var de = dictionary_english.GroupBy(x => x[0]);
-            foreach(var item in de)
+            //var de = dictionary_english.GroupBy(x => x[0]);
+            //foreach(var item in de)
+            //{
+            //    Console.WriteLine($"Words starting with '{item.Key}':");
+            //    foreach (var word in item)
+            //    {
+            //        Console.WriteLine(word);
+            //    }
+            //    Console.WriteLine("------------------------------");
+            //}
+            #endregion
+            #region Q3
+            string[] Arr = { "from", "salt", "earn", "last", "near", "form" };
+            var groups = Arr.GroupBy(w => w, new CustomComparer());
+
+            foreach (var group in groups)
             {
-                Console.WriteLine($"Words starting with '{item.Key}':");
-                foreach (var word in item)
-                {
-                    Console.WriteLine(word);
-                }
+                Console.WriteLine(string.Join("\n", group));
                 Console.WriteLine("------------------------------");
             }
             #endregion
