@@ -169,7 +169,11 @@ namespace LINQ_Assignment_02
             //CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(3).print(); // not Found any customer from Washington with orders.
             #endregion
             #region Q2
-            CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(2).print(); // not Found any customer from Washington with orders.
+            //CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(2).print(); // not Found any customer from Washington with orders.
+            #endregion
+            #region Q3
+            int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            numbers.TakeWhile((x,i)=> x > i ).print();
             #endregion
             #endregion
             Console.ReadKey();
