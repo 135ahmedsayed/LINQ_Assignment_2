@@ -18,8 +18,15 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q3
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //Arr.Where(x => x > 5).Skip(1).Take(1).print(); // returns 8
+            #endregion
+            #endregion
+            #region LINQ - Aggregate Operators
+            #region Q1
             int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            Arr.Where(x => x > 5).Skip(1).Take(1).print(); // returns 8
+            var odd = Arr.Count(x => x % 2 != 0);
+            Console.WriteLine(odd); // returns 5
             #endregion
             #endregion
             Console.ReadKey();
