@@ -39,18 +39,24 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q3
-            var Cat_P = ProductList.GroupBy(x => x.Category);
-            foreach (var item in Cat_P)
-            {
-                int count = 0;
-                Console.Write($"{item.Key} : ");
-                foreach (var p in item)
-                {
-                    count++;
-                }
-                Console.WriteLine(count);
-                Console.WriteLine("------------------------------");
-            }
+            //var Cat_P = ProductList.GroupBy(x => x.Category);
+            //foreach (var item in Cat_P)
+            //{
+            //    int count = 0;
+            //    Console.Write($"{item.Key} : ");
+            //    foreach (var p in item)
+            //    {
+            //        count++;
+            //    }
+            //    Console.WriteLine(count);
+            //    Console.WriteLine("------------------------------");
+            //}
+            #endregion
+
+            #region Q4
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            int sum = Arr.Sum();
+            Console.WriteLine(sum);
             #endregion
             #endregion
             Console.ReadKey();
