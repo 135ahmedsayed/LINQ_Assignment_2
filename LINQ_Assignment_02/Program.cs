@@ -176,7 +176,10 @@ namespace LINQ_Assignment_02
             //numbers.TakeWhile((x,i)=> x > i ).print();
             #endregion
             #region Q4
-            numbers.SkipWhile(x => x%3 != 0).print();
+            //numbers.SkipWhile(x => x%3 != 0).print();
+            #endregion
+            #region Q5
+            numbers.SkipWhile((x,i) => x >= i).print();
             #endregion
             #endregion
             Console.ReadKey();
