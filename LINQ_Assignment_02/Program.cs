@@ -145,7 +145,13 @@ namespace LINQ_Assignment_02
             #endregion
             #region LINQ - Set Operators
             #region Q1
-            ProductList.DistinctBy(x=>x.Category).print(); // returns distinct categories from ProductList
+            //ProductList.DistinctBy(x=>x.Category).print(); // returns distinct categories from ProductList
+            #endregion
+
+            #region Q2
+            ProductList.DistinctBy(x => x.ProductName[0]).print();
+            Console.WriteLine("______________________");
+            CustomerList.DistinctBy(x => x.CustomerName[0]).print();
             #endregion
             #endregion
             Console.ReadKey();
