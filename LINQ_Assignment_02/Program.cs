@@ -161,7 +161,12 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q5
-            CustomerList.Select(x => x.CustomerName[^3..]).Concat(ProductList.Select(x => x.ProductName[^3..])).Order().print();
+            //CustomerList.Select(x => x.CustomerName[^3..]).Concat(ProductList.Select(x => x.ProductName[^3..])).Order().print();
+            #endregion
+            #endregion
+            #region LINQ - Partitioning Operators
+            #region Q1
+            CustomerList.Where(x => x.City == "Washington").SelectMany(o => o.Orders).Take(3).print(); // not Found any customer from Washington with orders.
             #endregion
             #endregion
             Console.ReadKey();
