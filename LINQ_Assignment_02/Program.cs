@@ -13,8 +13,13 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q2
-            var FirstP = ProductList.First(x => x.UnitPrice > 1000M); 
-            Console.WriteLine(FirstP); // case null is returned.
+            //var FirstP = ProductList.First(x => x.UnitPrice > 1000M); 
+            //Console.WriteLine(FirstP); // case null is returned.
+            #endregion
+
+            #region Q3
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            Arr.Where(x => x > 5).Skip(1).Take(1).print(); // returns 8
             #endregion
             #endregion
             Console.ReadKey();
