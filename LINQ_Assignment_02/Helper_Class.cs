@@ -4,7 +4,7 @@ internal static class Helper_Class
 {
     public static void print<T>(this IEnumerable<T> list)
     {
-        if (list == null || !list.Any())
+        if (list == null)
         {
             Console.WriteLine("The list is empty or null.");
             return;

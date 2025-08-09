@@ -151,6 +151,10 @@ namespace LINQ_Assignment_02
             #region Q2
             ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(x => x.CustomerName[0])).print();
             #endregion
+
+            #region Q3
+            ProductList.Select(x => x.ProductName).Intersect(CustomerList.Select(x => x.CustomerName)).print();
+            #endregion
             #endregion
             Console.ReadKey();
         }
