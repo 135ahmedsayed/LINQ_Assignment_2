@@ -239,11 +239,19 @@ namespace LINQ_Assignment_02
             //ProductList.Select(x => x.ProductName).print();
             #endregion
             #region Q2
-            string[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
-            words.Select(w => new
+            //string[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            //words.Select(w => new
+            //{
+            //    lowercase = w.ToLower(),
+            //    uppercase = w.ToUpper(),
+            //}).print();
+            #endregion
+            #region Q3
+            ProductList.Select(x => new 
             {
-                lowercase = w.ToLower(),
-                uppercase = w.ToUpper(),
+                x.ProductName,
+                Price = x.UnitPrice,
+                x.UnitsInStock,
             }).print();
             #endregion
             #endregion
