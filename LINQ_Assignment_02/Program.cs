@@ -135,12 +135,17 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q14
-            var avr = ProductList.GroupBy(x => x.Category);
-            foreach (var item in avr)
-            {
-                Console.WriteLine($"{item.Key} : Average UnitPrice = {item.Average(x => x.UnitPrice)}");
-                Console.WriteLine("____________________");
-            }
+            //var avr = ProductList.GroupBy(x => x.Category);
+            //foreach (var item in avr)
+            //{
+            //    Console.WriteLine($"{item.Key} : Average UnitPrice = {item.Average(x => x.UnitPrice)}");
+            //    Console.WriteLine("____________________");
+            //}
+            #endregion
+            #endregion
+            #region LINQ - Set Operators
+            #region Q1
+            ProductList.DistinctBy(x=>x.Category).print(); // returns distinct categories from ProductList
             #endregion
             #endregion
             Console.ReadKey();
