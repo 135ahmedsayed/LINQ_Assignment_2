@@ -79,8 +79,17 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q8
-            double Average = dictionary_english.Average(x => x.Length);
-            Console.WriteLine(Average); // returns 9.442576175563836
+            //double Average = dictionary_english.Average(x => x.Length);
+            //Console.WriteLine(Average); // returns 9.442576175563836
+            #endregion
+
+            #region Q9
+            var TotalUnitsInStock = ProductList.Where(x=>x.UnitsInStock!=0).GroupBy(x => x.Category);
+            foreach (var item in TotalUnitsInStock)
+            {
+                Console.WriteLine($"{item.Key} : UnitsInStocks = {item.Sum(x=>x.UnitsInStock)}");
+                Console.WriteLine("____________________");
+            }
             #endregion
             #endregion
             Console.ReadKey();
