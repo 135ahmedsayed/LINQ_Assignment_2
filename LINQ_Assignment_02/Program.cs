@@ -30,12 +30,27 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q2
-            CustomerList.Select(x => new 
+            //CustomerList.Select(x => new 
+            //{
+            //    CustomerID = x.CustomerID,
+            //    CustomerName = x.CustomerName,
+            //    OrderCount = x.Orders.Count(),
+            //}).print();
+            #endregion
+
+            #region Q3
+            var Cat_P = ProductList.GroupBy(x => x.Category);
+            foreach (var item in Cat_P)
             {
-                CustomerID = x.CustomerID,
-                CustomerName = x.CustomerName,
-                OrderCount = x.Orders.Count(),
-            }).print();
+                int count = 0;
+                Console.Write($"{item.Key} : ");
+                foreach (var p in item)
+                {
+                    count++;
+                }
+                Console.WriteLine(count);
+                Console.WriteLine("------------------------------");
+            }
             #endregion
             #endregion
             Console.ReadKey();
