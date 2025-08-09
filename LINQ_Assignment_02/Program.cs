@@ -189,10 +189,16 @@ namespace LINQ_Assignment_02
             //Console.WriteLine(R);
             #endregion
             #region Q2
+            //var p = ProductList.GroupBy(x => x.Category);
+            //foreach (var item in p)
+            //    if (item.Any(x => x.UnitsInStock == 0))
+            //        Console.WriteLine($"{item.Key} has a product with UnitsInStock = 0");
+            #endregion
+            #region Q3
             var p = ProductList.GroupBy(x => x.Category);
             foreach (var item in p)
-                if (item.Any(x => x.UnitsInStock == 0))
-                    Console.WriteLine($"{item.Key} has a product with UnitsInStock = 0");
+                if (item.All(x => x.UnitsInStock != 0))
+                    Console.WriteLine($"{item.Key} has a product with UnitsInStock");
             #endregion
             #endregion
             Console.ReadKey();
