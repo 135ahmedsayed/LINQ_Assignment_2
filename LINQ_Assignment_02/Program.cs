@@ -157,7 +157,11 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q4
-            ProductList.Select(x => x.ProductName[0]).Except(CustomerList.Select(x => x.CustomerName[0])).print();
+            //ProductList.Select(x => x.ProductName[0]).Except(CustomerList.Select(x => x.CustomerName[0])).print();
+            #endregion
+
+            #region Q5
+            CustomerList.Select(x => x.CustomerName[^3..]).Concat(ProductList.Select(x => x.ProductName[^3..])).Order().print();
             #endregion
             #endregion
             Console.ReadKey();
