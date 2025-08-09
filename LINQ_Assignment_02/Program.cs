@@ -54,9 +54,15 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q4
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            int sum = Arr.Sum();
-            Console.WriteLine(sum);
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //int sum = Arr.Sum();
+            //Console.WriteLine(sum);
+            #endregion
+
+            #region Q5
+            var dictionary_english = File.ReadAllLines("dictionary_english.txt");
+            var total_Char = dictionary_english.Sum(x => x.Length);
+            Console.WriteLine(total_Char); // returns 3494688
             #endregion
             #endregion
             Console.ReadKey();
