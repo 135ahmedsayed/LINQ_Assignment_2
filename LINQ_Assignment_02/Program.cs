@@ -93,10 +93,22 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q10
-            var CheapestUnitsInStock = ProductList.GroupBy(x => x.Category);
-            foreach (var item in CheapestUnitsInStock)
+            //var CheapestUnitPrice = ProductList.GroupBy(x => x.Category);
+            //foreach (var item in CheapestUnitPrice)
+            //{
+            //    Console.WriteLine($"{item.Key} : UnitPrice = {item.OrderBy(x => x.UnitPrice).First()}");
+            //    Console.WriteLine("____________________");
+            //}
+            #endregion
+
+            #region Q11
+            var cheapest = from P in ProductList
+                           group P by P.Category into g
+                           let minPrice = g.OrderBy(x => x.UnitPrice).FirstOrDefault()
+                           select minPrice;
+            foreach (var item in cheapest)
             {
-                Console.WriteLine($"{item.Key} : UnitsInStocks = {item.OrderBy(x=>x.UnitPrice).First()}");
+                Console.WriteLine($"{item}");
                 Console.WriteLine("____________________");
             }
             #endregion
