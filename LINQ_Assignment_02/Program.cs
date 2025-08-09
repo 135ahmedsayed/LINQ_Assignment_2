@@ -8,8 +8,13 @@ namespace LINQ_Assignment_02
         {
             #region LINQ - Element Operators
             #region Q1
-            var FirstP = ProductList.First(x => x.UnitsInStock == 0);
-            Console.WriteLine(FirstP);
+            //var FirstP = ProductList.First(x => x.UnitsInStock == 0);
+            //Console.WriteLine(FirstP);
+            #endregion
+
+            #region Q2
+            var FirstP = ProductList.First(x => x.UnitPrice > 1000M); 
+            Console.WriteLine(FirstP); // case null is returned.
             #endregion
             #endregion
             Console.ReadKey();
