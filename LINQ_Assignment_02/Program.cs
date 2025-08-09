@@ -60,9 +60,15 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q5
+            //var dictionary_english = File.ReadAllLines("dictionary_english.txt");
+            //var total_Char = dictionary_english.Sum(x => x.Length);
+            //Console.WriteLine(total_Char); // returns 3494688
+            #endregion
+
+            #region Q6
             var dictionary_english = File.ReadAllLines("dictionary_english.txt");
-            var total_Char = dictionary_english.Sum(x => x.Length);
-            Console.WriteLine(total_Char); // returns 3494688
+            var Lenth_Shortest = dictionary_english.OrderBy(x => x.Length).First();
+            Console.WriteLine(Lenth_Shortest); // returns b
             #endregion
             #endregion
             Console.ReadKey();
