@@ -224,14 +224,19 @@ namespace LINQ_Assignment_02
             //}
             #endregion
             #region Q3
-            string[] Arr = { "from", "salt", "earn", "last", "near", "form" };
-            var groups = Arr.GroupBy(w => w, new CustomComparer());
+            //string[] Arr = { "from", "salt", "earn", "last", "near", "form" };
+            //var groups = Arr.GroupBy(w => w, new CustomComparer());
 
-            foreach (var group in groups)
-            {
-                Console.WriteLine(string.Join("\n", group));
-                Console.WriteLine("------------------------------");
-            }
+            //foreach (var group in groups)
+            //{
+            //    Console.WriteLine(string.Join("\n", group));
+            //    Console.WriteLine("------------------------------");
+            //}
+            #endregion
+            #endregion
+            #region LINQ – Transformation Operators
+            #region Q1
+            ProductList.Select(x => x.ProductName).print();
             #endregion
             #endregion
             Console.ReadKey();
