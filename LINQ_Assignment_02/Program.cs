@@ -149,11 +149,15 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q2
-            ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(x => x.CustomerName[0])).print();
+            //ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(x => x.CustomerName[0])).print();
             #endregion
 
             #region Q3
-            ProductList.Select(x => x.ProductName).Intersect(CustomerList.Select(x => x.CustomerName)).print();
+            //ProductList.Select(x => x.ProductName[0]).Intersect(CustomerList.Select(x => x.CustomerName[0])).print();
+            #endregion
+
+            #region Q4
+            ProductList.Select(x => x.ProductName[0]).Except(CustomerList.Select(x => x.CustomerName[0])).print();
             #endregion
             #endregion
             Console.ReadKey();
