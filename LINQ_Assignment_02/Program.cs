@@ -123,13 +123,22 @@ namespace LINQ_Assignment_02
             #endregion
 
             #region Q13
-            var Expensive = from P in ProductList
-                           group P by P.Category into g
-                           let minPrice = g.OrderBy(x => x.UnitPrice).LastOrDefault()
-                           select minPrice;
-            foreach (var item in Expensive)
+            //var Expensive = from P in ProductList
+            //               group P by P.Category into g
+            //               let minPrice = g.OrderBy(x => x.UnitPrice).LastOrDefault()
+            //               select minPrice;
+            //foreach (var item in Expensive)
+            //{
+            //    Console.WriteLine($"{item}");
+            //    Console.WriteLine("____________________");
+            //}
+            #endregion
+
+            #region Q14
+            var avr = ProductList.GroupBy(x => x.Category);
+            foreach (var item in avr)
             {
-                Console.WriteLine($"{item}");
+                Console.WriteLine($"{item.Key} : Average UnitPrice = {item.Average(x => x.UnitPrice)}");
                 Console.WriteLine("____________________");
             }
             #endregion
