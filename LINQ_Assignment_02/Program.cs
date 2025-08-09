@@ -204,11 +204,23 @@ namespace LINQ_Assignment_02
             #endregion
             #region LINQ – Grouping Operators
             #region Q1
-            List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-            var groupedNumbers = numbers.GroupBy(x => x % 5);
-            foreach (var group in groupedNumbers)
+            //List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+            //var groupedNumbers = numbers.GroupBy(x => x % 5);
+            //foreach (var group in groupedNumbers)
+            //{
+            //    Console.WriteLine($"Numbers with a remainder of {group.Key} when divided by 5 : \n{string.Join("\n", group)}");
+            //}
+            #endregion
+            #region Q2
+            var de = dictionary_english.GroupBy(x => x[0]);
+            foreach(var item in de)
             {
-                Console.WriteLine($"Numbers with a remainder of {group.Key} when divided by 5 : \n{string.Join("\n", group)}");
+                Console.WriteLine($"Words starting with '{item.Key}':");
+                foreach (var word in item)
+                {
+                    Console.WriteLine(word);
+                }
+                Console.WriteLine("------------------------------");
             }
             #endregion
             #endregion
