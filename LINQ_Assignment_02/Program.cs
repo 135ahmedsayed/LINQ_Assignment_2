@@ -236,7 +236,15 @@ namespace LINQ_Assignment_02
             #endregion
             #region LINQ – Transformation Operators
             #region Q1
-            ProductList.Select(x => x.ProductName).print();
+            //ProductList.Select(x => x.ProductName).print();
+            #endregion
+            #region Q2
+            string[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            words.Select(w => new
+            {
+                lowercase = w.ToLower(),
+                uppercase = w.ToUpper(),
+            }).print();
             #endregion
             #endregion
             Console.ReadKey();
